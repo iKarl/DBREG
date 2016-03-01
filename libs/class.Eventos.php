@@ -1507,7 +1507,7 @@ class Eventos extends Model
 		// Add a page
 		// This method has several options, check the source code documentation for more information.
 		$pdf->AddPage(); // medidas en inch
-
+print_r($registro);
 		// X se mueve de izquiera a derecha 
 		// Y se nueve de arriba a abajo
 
