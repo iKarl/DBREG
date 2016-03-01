@@ -1473,13 +1473,7 @@ class Eventos extends Model
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
 
 		// create new PDF document
-		//$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-
-		$orientation = "P"; //PDF_PAGE_ORIENTATION;
-		$pdf_unit = "cm"; // PDF_UNIT;
-		$formato = array(12, 10); // PDF_PAGE_FORMAT
-
-		$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 		// set document information
 		$pdf->SetCreator("Tecnoregistro");
@@ -1526,18 +1520,18 @@ class Eventos extends Model
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
-		$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
+		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
-		$pdf->Image($img_file, 0, 0, 12, 10, '', '', '', false, 300, '', false, 0, 0, 0);
+		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('', '', $x='0', $y='5', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='0', $y='160', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 16);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('', '', $x='0', $y='6', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='0', $y='170', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
@@ -1554,7 +1548,7 @@ class Eventos extends Model
 		if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='3', $y='1', 3, 3.2); //  40, 42
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='170', $y='70', 60, 62); //  40, 42
 		}
 
 		// define barcode style
@@ -1576,7 +1570,7 @@ class Eventos extends Model
 
 		// Codigo de barra
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-140', $y='98', '', 16, 0.4, $style, 'N');
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='2', $y='3.5', '', 1.2, 0.1, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
 
