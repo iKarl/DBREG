@@ -1534,11 +1534,11 @@ class Eventos extends Model
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('130', '', $x='20', $y='80', $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('130', '', $x='20', $y='90', $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 16);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('130', '', $x='20', $y='90', $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('130', '', $x='20', $y='100', $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
