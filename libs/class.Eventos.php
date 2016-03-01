@@ -1480,7 +1480,7 @@ class Eventos extends Model
 		//$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
 
 		// create new PDF document
-		$pdf = new TCPDF("L", PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+		$pdf = new TCPDF("P", PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 		// set document information
 		$pdf->SetCreator("Tecnoregistro");
