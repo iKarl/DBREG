@@ -1548,7 +1548,7 @@ class Eventos extends Model
 		if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='110', $y='50', 60, 62); //  40, 42
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='120', $y='40', 60, 62); //  40, 42
 		}
 
 		// define barcode style
