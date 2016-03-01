@@ -1520,9 +1520,9 @@ class Eventos extends Model
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
-		$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
+		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
-		$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, $border);
+		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, $border);
 
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
@@ -1545,11 +1545,11 @@ class Eventos extends Model
 		//$pdf->SetFont('helvetica', '', 18);
 		//$pdf->writeHTMLCell('', '', 10, 70, $registro->emp_o_ins, $border=0, $ln=0, $fill=0, $reseth=false, $align='L', $autopadding=false);
 
-		//if (isset($registro->foto_fotografia))
+		if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-		//	$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='10', $y='70', 60, 62); //  40, 42
-		//}
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='10', $y='70', 60, 62); //  40, 42
+		}
 
 		// define barcode style
 		$style = array(
@@ -1572,43 +1572,11 @@ class Eventos extends Model
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-140', $y='98', '', 16, 0.4, $style, 'N');
 		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
-/*		if (!empty($registro->sillas))
-		{
-			foreach ($registro->sillas as $silla)
-			{
-				$pdf->writeHTMLCell('50', '', $x='30', $y='130', $silla->nombre_mesa, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-				$pdf->writeHTMLCell('50', '', $x='60', $y='130', $silla->numero_silla, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-			}
-		}
-
-$qrcode = <<<EOD
-BEGIN:VCARD\r\n
-N:$nombre;$app\r\n
-ORG:$emp_o_ins\r\n
-TITLE:$cargo\r\n
-TEL;WORK;VOICE:$registro->lada_telefono $registro->telefono_particular\r\n
-EMAIL:$registro->email\r\n
-END:VCARD
-EOD;
-//echo $qrcode;
-		$style = array(
-		    'border' => 0,
-		    'vpadding' => 'auto',
-		    'hpadding' => 'auto',
-		    'fgcolor' => array(0,0,0),
-		    'bgcolor' => false, //array(255,255,255)
-		    'module_width' => 1, // width of a single module in points
-		    'module_height' => 1 // height of a single module in points
-		);
-
-		//$pdf->write2DBarcode($qrcode, 'QRCODE,H', 40, 75, 40, 40, $style, 'N');
-		//$pdf->write2DBarcode($qrcode, 'QRCODE,H', 122, 75, 40, 40, $style, 'N');*/
 		// ---------------------------------------------------------
 
 		// Close and output PDF document
 		// This method has several options, check the source code documentation for more information.
 		$pdf->Output('gafete_' . time() . '.pdf', 'I');
-		echo "";
 	}
 
 	/**
