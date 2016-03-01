@@ -1473,7 +1473,14 @@ class Eventos extends Model
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
 
 		// create new PDF document
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+		$orientation = "P"; //PDF_PAGE_ORIENTATION;
+		$pdf_unit = "cm"; // PDF_UNIT;
+		$formato = array(12, 20); // PDF_PAGE_FORMAT
+
+		$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
+
+		// create new PDF document
+		//$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 		// set document information
 		$pdf->SetCreator("Tecnoregistro");
