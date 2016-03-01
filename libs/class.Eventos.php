@@ -1473,7 +1473,13 @@ class Eventos extends Model
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
 
 		// create new PDF document
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+		//$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+		$orientation = "P"; //PDF_PAGE_ORIENTATION;
+		$pdf_unit = "cm"; // PDF_UNIT;
+		$formato = array(12, 10); // PDF_PAGE_FORMAT
+
+		$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
 
 		// set document information
 		$pdf->SetCreator("Tecnoregistro");
@@ -1522,7 +1528,7 @@ class Eventos extends Model
 
 		$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
-		$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
+		$pdf->Image($img_file, 0, 0, 12, 10, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
