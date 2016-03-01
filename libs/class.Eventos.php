@@ -1534,11 +1534,11 @@ class Eventos extends Model
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('9', '', $x='3', $y='6', $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('9', '', $x='1', $y='6', $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 16);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('9', '', $x='3', $y='7', $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('9', '', $x='1', $y='7', $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
@@ -1555,7 +1555,7 @@ class Eventos extends Model
 		if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='120', $y='40', 60, 62); //  40, 42
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='3', $y='3', 4, 4.2); //  40, 42
 		}
 
 		// define barcode style
@@ -1577,7 +1577,7 @@ class Eventos extends Model
 
 		// Codigo de barra
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-140', $y='98', '', 16, 0.4, $style, 'N');
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
+		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
 
