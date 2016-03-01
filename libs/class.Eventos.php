@@ -1520,9 +1520,9 @@ class Eventos extends Model
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
-		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
+		$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
-		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, $border);
+		$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
