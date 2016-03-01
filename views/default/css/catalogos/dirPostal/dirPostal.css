@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
+ * @package: softMC/view/{layout}/css/catalogos/dirPostal/
+ * @version $Id: dirPostal.css 1.0 2011-04-08 00:52 _Karl_ $;
+ * @author: Carlos A. Garcia Hernandez <carlos.agh@gmail.com, son_gohan_khan@hotmail.com>
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.codigosPostales
+{
+	border-collapse: separate;
+	border-radius: 5px 5px 0 0;
+	border-spacing: 0;
+	margin-top: 10px;
+}
+
+.codigosPostales thead th
+{
+	background: #ffffff; /* old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom,
+		color-stop(0%,#ffffff),
+		color-stop(50%,#f1f1f1),
+		color-stop(51%,#e1e1e1),
+		color-stop(100%,#f6f6f6)
+	); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* ie */
+	border-bottom: 1px solid #888;
+	border-right: 1px solid #888;
+	border-top: 1px solid #888;
+	color: #4A6380;
+	line-height: 25px;
+}
+
+.codigosPostales thead th:first-child
+{
+	border-left: 1px solid #888;
+	border-radius: 5px 0 0 0;
+}
+
+.codigosPostales thead th:last-child
+{
+	border-radius: 0 5px 0 0;
+}
+
+.codigosPostales tbody td
+{
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	font-weight: bold;
+	line-height: 15px;
+	padding: 3px 0 3px 5px;
+	vertical-align: middle;
+}
+
+.codigosPostales tbody td:first-child
+{
+	border-left: 1px solid #CCC;
+	text-align: center;
+}
+
+.codigosPostales tbody td:last-child
+{
+	border-right: 1px solid #CCC;
+	text-align: center;
+}
+
+.codigosPostales tfoot td
+{
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	line-height: 34px;
+	padding: 0 0 0 5px;
+	text-align: center;
+}
+
+.codigosPostales tfoot td:first-child
+{
+	border-left: 1px solid #CCC;
+	line-height: 34px;
+	padding: 0 0 0 5px;
+	text-align: center;
+}
+
+#busqueda p
+{
+	font-weight: bold;
+	line-height: 35px;
+	text-align: center;
+}
+
+/**
+ * Estilos de editar Codigo Postal
+ */
+.mCodigoPostal ul
+{
+	list-style: none;
+	/*-moz-column-count: 2;
+	-moz-column-gap: 10px;
+	-moz-column-rule: 1px solid #ccc;
+	-moz-column-width: 150px;*/
+}
+
+.mCodigoPostal ul li label
+{
+	display: block;
+	line-height: 25px;
+}

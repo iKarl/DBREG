@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/*
+ * Divisas
+ */
+.tipoCambioDivisa
+{
+	display: inline-block;
+	margin-left: 20px;
+	min-width: 18%;
+}
+
+.editarDivisa
+{
+	margin: -23px -6px;
+	position: absolute;
+}
+
+.editarDivisa label.inline-label-error
+{
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	display: block;
+	margin: -6px 0;
+	-moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+	-webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+	-o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+	-ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+	box-shadow: 1px 1px 2px 0 #CCCCCC;
+}
+
+/*
+ * Detalles
+ */
+.detalles
+{
+	display: inline-block;
+	width: 79.5%; /*79.5*/
+}
+
+/*
+ * Plantillas
+ */
+.plantillas
+{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+/*
+ * Categorias
+ */
+.catCategorias
+{
+	display: inline-block;
+	width: 79.5%;
+}
+
+/*
+ *
+ */
+.idiomas
+{
+	display: inline-block;
+	margin-left: 20px;
+	vertical-align: top;
+	min-width: 18%;
+}
+
+/*
+ * Observaciones
+ */
+.observaciones
+{
+	display: inline-block;
+	max-width: 48%;
+	min-width: 48%;
+}
+
+.observaciones > div
+{
+	border: 1px solid rgba(0,0,0,.15);
+	min-height: 59px;
+	padding: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.controlCambios
+{
+	display: inline-block;
+	margin-left: 20px;
+	max-width: 49.5%;
+	min-width: 49.5%;
+	vertical-align: top;
+}
+
+.tipoCambioDivisa h6,
+.detalles h6,
+.plantillas h6,
+.catCategorias h6,
+.idiomas h6,
+.observaciones h6,
+.controlCambios h6
+{
+	color: #FF9900;
+	background: #FAFAFA;
+	border: 1px solid rgba(0,0,0,.15);
+	padding: 5px 7px;
+	margin-bottom: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Nombres de la categorias */
+.nombres-categorias
+{
+	vertical-align: top;
+}
+
+.nombres-categorias .accion-agregar-categoria
+{
+	float: right;
+}
+
+.nombres-categorias .nombre-categoria
+{
+	line-height: 23px;
+}
+
+.acciones-nombre-categoria
+{
+	display: none;
+}
+
+.nombre-categoria:hover
+.acciones-nombre-categoria
+{
+	display: inline-block;
+}
+
+/* Catalogo de titulos */
+.titulos
+{
+	max-height: 400px;
+	min-height: 350px;
+	min-width: 578px;
+	margin-bottom: 10px;
+}
+
+#nuevo-titulo
+{
+	background: #FFF;
+	display: none;
+	height: 100%;
+	position: absolute;
+	width: 98.3%;
+}
+
+/* Catalogo de status de registros */
+.status-registros
+{
+	max-height: 400px;
+	min-height: 350px;
+	min-width: 578px;
+	margin-bottom: 10px;
+}
+
+#nuevo-status-registro
+{
+	background: #FFF;
+	display: none;
+	height: 100%;
+	position: absolute;
+	width: 98.3%;
+}
+
+#editarStatusReg
+{
+	background: #FFFFFF;
+	border: 2px solid #CCC;
+	border-radius: 5px 5px 5px 5px;
+	margin: -23px -6px;
+	padding: 10px;
+	position: absolute;
+}
+
+.alert-error
+{
+	display: none;
+}
+
+/* Catalogo formas de pago */
+.formas-pago
+{
+	min-height: 450px;
+}
+
+.nuevo-nombre-formaPago
+{
+	float: right;
+}
+
+.nombre-formaPago
+{
+	line-height: 23px;
+}
+
+.eliminar-nombre-formaPago
+{
+	display: none;
+}
+
+.nombre-formaPago:hover
+.eliminar-nombre-formaPago
+{
+	display: inline-block;
+}
+
+/**
+ * Catalogo de items
+ */
+#form-alta-item,
+#form-editar-item
+{
+	background-color: #FFF;
+	display: none;
+    height: 100%;
+    position: absolute;
+    width: 99%;	
+}
+
+/* Nombres de los items */
+.nombres-items
+{
+	vertical-align: top;
+}
+
+.nombres-items .agregar-nombre-item
+{
+	float: right;
+}
+
+.nombres-items .nombre-item
+{
+	line-height: 23px;
+}
+
+.acciones-nombre-item
+{
+	display: none;
+}
+
+.nombre-item:hover
+.acciones-nombre-item
+{
+	display: inline-block;
+}
+
+.catItems .fechaLimite
+{
+	border-top: 1px solid #CCC;
+	text-align: right;
+}

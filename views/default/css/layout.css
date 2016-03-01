@@ -1,0 +1,322 @@
+@charset "utf-8";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos de formateo
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+html
+{
+	height: 100%;
+	margin: 0 auto;
+}
+
+body
+{
+	background-color: #FFFFFF;
+	/*font: 12px 'Arial', Verdana, serif, sans-serif, monospace !important;*/
+	height: 100%;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos del contenedor general
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#contenedor
+{
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto;
+	min-height: 100%;
+	min-width: 988px;
+	max-width: 1280px;
+}
+
+.slice
+{
+	clear: both;
+	padding-top: 28px; /* 40px */
+	visibility: hidden; /* on test */
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos del header principal
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+header
+{
+	background: #F1F1F1;
+	border-bottom: 1px solid #DDD;
+	height: 28px;
+}
+
+header .titulo
+{
+	border-right: 1px solid #DDD;
+	display: inline-block;
+	line-height: 28px;
+	padding: 0 10px;
+}
+
+header .titulo a
+{
+	color: #888;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos del menu principal
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+nav
+{
+	display: inline-block;
+}
+
+nav li > a#menuPrincipal
+{
+	background: url(./../../images/ui-menu.png) 3px 50% no-repeat;
+	color: #1F6991;
+	display: block;
+	font-weight: bold;
+	padding: 0 10px 0 25px;
+	text-decoration: none;
+}
+
+nav .dropdown.open > a#menuPrincipal
+{
+	color: #FF9900;
+}
+
+nav > li
+{
+	border-right: 1px solid rgba(0,0,0,.2);
+	list-style: none;
+}
+
+nav > li > .dropdown-menu
+{
+	margin-left: -4px;
+	margin-top: 5px;
+}
+
+nav > li > .dropdown-menu li
+{
+	/*border-bottom: 1px solid rgba(0,0,0,.07);*/
+}
+
+.dropdown-menu li a img
+{
+	margin: 0 5px 0 -9px;
+	vertical-align: middle;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos datos de login de usuario
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.datosUsuario
+{
+	display: inline-block;
+	line-height: 28px;
+}
+
+.datosUsuario ul
+{
+	list-style: none;
+	margin: 0;
+}
+
+.datosUsuario ul li
+{
+	border-right: 1px solid rgba(0,0,0,.2);
+	display: inline-block;
+	padding: 0 10px 0 5px;
+}
+
+.datosUsuario ul li a.logout
+{
+	background: url(./../../images/ui-logout.png) 0 50% no-repeat;
+	color: #1F6991;
+	display: block;
+	padding: 0 0 0 22px;
+	text-decoration: none;
+}
+
+.datosUsuario ul li a.logout:hover
+{
+	color: #FF9900;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos del footer general
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+body > footer
+{
+	background: #F1F1F1;
+	border-top: 1px solid #DDDDDD;
+	height: 25px;
+	margin: -27px auto;
+	min-width: 988px;
+	text-align: left;
+}
+
+body > footer span
+{
+	color: #676767;
+	font-size: .8em;
+	line-height: 25px;
+	padding: 0 5px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos del cuerpo general
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#cuerpo
+{
+	padding: 0 8px 10px;
+}
+
+.nav
+{
+	margin-bottom: 0;
+}
+
+.nav-seccion
+{
+	border-bottom: 1px solid #EEEEEE;
+    margin: 0 0 10px 0;
+}
+
+.nav-seccion > li
+{
+	border-right: 1px solid #EEEEEE;
+	display: inline-block;
+	line-height: 26px;
+	min-height: 28px;
+	margin: 0 4px 5px 0;
+	padding: 0 8px 0 0;
+	vertical-align: top;
+}
+
+form
+{
+	margin: 0;
+}
+
+.control-group
+{
+	margin-bottom: 0;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	margin-bottom: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Estilos varios
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#mostrar-actividad
+{
+	background: transparent url(./../../images/loading.gif) 0 50% no-repeat;
+	color: #888;
+	visibility: hidden;
+	padding: 0 5px 0 18px;
+}
+
+.loading
+{
+	background: transparent url(./../../images/loading.gif) 2px 50% no-repeat;
+	height: 16px;
+	line-height: 16px;
+	margin: 5px auto;
+	padding: 0 0 0 20px;
+	width: 65px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Acciones del formulario
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+label.inline-label-error
+{
+	color: #FF0000;
+	display: none;
+	padding: 2px;
+	text-align: left;
+}
+
+label.error {
+	color: #FF0000;
+}
+
+.acciones-form
+{
+	clear: both;
+	display: block;
+	margin: 10px 0 0;
+}
+
+.form-error
+{
+	color: #FF0000;
+	margin: 0 0 5px;
+	padding: 5px 2px;
+	text-align: center;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Fomulario
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.table thead th,
+.table tfoot th
+{
+	text-align: center;
+}
+
+.table tbody th
+{
+	font-weight: normal;
+	text-align: center;
+}
+
+/**
+ * Formulario horizontal
+ */
+fieldset.horizontal .control-group
+{
+	display: inline-block;
+	/*float: left;*/
+	clear: none;
+	margin: 0 10px 10px 0;
+	min-width: 180px;
+	vertical-align: top;
+}
+
+.control-group .control-label.inline
+{
+	display: block;
+	float: left;
+	padding: 5px;
+	text-align: right;
+}
+
+.control-group .control-label.inline + .controls
+{
+	display: block;
+	float: left;
+	padding: 0 0 0 5px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Alertas modales jQuery UI
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ .alertas
+ {
+    display: block;
+    font-size: 1.1em;
+    line-height: 18px;
+    padding: 10px;
+    text-align: justify;
+}
+
+#nuevo-registro .control-group > .control-label,
+#editar-registro .control-group > .control-label {
+	font-weight: bold;
+}

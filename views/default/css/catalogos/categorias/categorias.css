@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
+ * @package: softMC/views/{layout}/css/catalogos/categorias/
+ * @version $Id: categorias.css 1.0 2012-02-27 21:54 _Karl_ $;
+ * @author: Carlos A. García Hernández <carlos.agh@gmail.com, son_gohan_khan@hotmail.com>
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.table.table-striped thead tr th:last-child,
+.table.table-striped tbody tr td:last-child,
+.table.table-striped thead tr th:last-child
+{
+	width: 100px;
+}

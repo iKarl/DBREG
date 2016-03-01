@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
+ * @package: softMC/views/{layout}/css/catalogos/paises/
+ * @version $Id: paises.css 1.0 2011-04-08 00:52 _Karl_ $;
+ * @author: Carlos A. Garcia Hernandez <carlos.agh@gmail.com, son_gohan_khan@hotmail.com>
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.listaPaises
+{
+	border-collapse: separate;
+	border-radius: 5px 5px 0 0;
+	border-spacing: 0;
+	margin-top: 10px;
+}
+
+.listaPaises thead th
+{
+	background: #ffffff; /* old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom,
+		color-stop(0%,#ffffff),
+		color-stop(50%,#f1f1f1),
+		color-stop(51%,#e1e1e1),
+		color-stop(100%,#f6f6f6)
+	); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* ie */
+	border-bottom: 1px solid #888;
+	border-right: 1px solid #888;
+	border-top: 1px solid #888;
+	color: #4A6380;
+	line-height: 25px;
+}
+
+.listaPaises thead th:first-child
+{
+	border-left: 1px solid #888;
+	border-radius: 5px 0 0 0;
+}
+
+.listaPaises thead th:last-child
+{
+	border-radius: 0 5px 0 0;
+}
+
+.listaPaises tbody td
+{
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	font-weight: bold;
+	line-height: 15px;
+	padding: 3px 0 3px 5px;
+	vertical-align: middle;
+}
+
+.listaPaises tbody td:first-child
+{
+	border-left: 1px solid #CCC;
+}
+
+.listaPaises tbody td:last-child
+{
+	border-right: 1px solid #CCC;
+}
+
+.listaPaises tbody td img
+{
+	margin: -2px 5px 0 0;
+	vertical-align: middle;
+}
+
+.listaPaises tfoot td
+{
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	line-height: 34px;
+	padding: 1px 0 0 5px;
+	text-align: center;
+}
+
+.listaPaises tfoot td:first-child
+{
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	line-height: 34px;
+	padding: 0 0 0 5px;
+	text-align: center;
+}
+
+.listaPaises tfoot td b
+{
+	background: #EAEAEA;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	color: #CCC;
+	line-height: 33px;
+	padding: 7px 12px;
+	text-align: center;
+}
+
+.numPag img
+{
+	vertical-align: middle;
+}
+
+/**
+ * Estilos de agregar y editar País
+ */
+.mPais ul
+{
+	list-style: none;
+}
+
+.mPais ul li label
+{
+	display: block;
+	line-height: 25px;
+}
+
+
+
+
+
+
+
+

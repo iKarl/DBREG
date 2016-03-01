@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
+ * @package: softMC/views/{layout}/css/catalogos/titulos/
+ * @version $Id: titulos.css 1.0 2011-04-08 00:52 _Karl_ $;
+ * @author: Carlos A. García Hernández <carlos.agh@gmail.com, son_gohan_khan@hotmail.com>
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.table.table-striped thead tr th:last-child,
+.table.table-striped tbody tr td:last-child,
+.table.table-striped thead tr th:last-child
+{
+	width: 100px;
+}

@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+#Si la url solicitada no es un fichero(existente), continuar...
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Si la url solicitada no es una carpeta(existente), continuar...
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#se toma todo ese -query_string- y se pasa como parametro section
+
+RewriteRule ^action([^.+/?])*$ index.php?action=$1 [NC,L]
+RewriteRule ^(([^.+])*)(^\?[.+])?$ index.php?section=$1 [QSA,NC,L]
+RewriteRule ^([^.+/?])*$ index.php?section=$1 [NC,L]
+RewriteRule ^$ index.php [NC,L]
+
+</IfModule>

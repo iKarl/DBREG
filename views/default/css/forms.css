@@ -1,0 +1,279 @@
+@charset "utf-8";
+/**
+ * Estilos generales de formularios
+ */
+
+/**
+ * Entradas
+ */
+::-webkit-input-placeholder
+{
+	color: #D1D1D1;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder
+{
+	color: #D1D1D1;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select,
+textarea
+{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	font-size: 1em;
+	padding: 4px;
+	outline: none;
+	-moz-transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+textarea
+{
+	font-size: 1.2em;
+	resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus
+{
+	border-color: rgba(82, 168, 236, .75);
+	-moz-box-shadow: 0 0 5px rgba(82, 168, 236, .5);
+	-webkit-box-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	-o-box-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	-ms-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	box-shadow: 0 0 5px rgba(82, 168, 236, .5);  
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled
+{
+	background-color: rgba(0,0,0,.1);
+	border: 1px solid rgba(0,0,0,0.10);
+	color: #888;
+}
+
+/**
+ * Botones
+ */
+button
+{
+	background: rgba(119, 136, 153, .75) url(../../images/glass_light-trans.png) repeat-x scroll 0 49.5%;
+	border: 1px solid rgba(0, 0, 0, .2);
+	color: #FFF;
+	cursor: pointer;
+	font-size: .9em;
+	padding: 2px;
+	vertical-align: middle;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 0 2px rgba(0, 0, 0, .08);
+	-webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, .08);
+	-o-box-shadow: 0 0 0 2px rgba(0, 0, 0, .08);
+	-ms-box-shadow: 0 0 0 2px rgba(0, 0, 0, .08);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+button img
+{
+	height: 16px;
+	vertical-align: middle;
+	width: 16px;
+}
+
+button:active
+{
+	border-color: rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 0 5px rgba(82, 168, 236, .5);
+	-webkit-box-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	-o-box-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	-ms-shadow: 0 0 5px rgba(82, 168, 236, .5); 
+	box-shadow: 0 0 1px 2px rgba(255, 153, 0, .5);  
+}
+
+button:disabled
+{
+	color: #DDD;
+	cursor: default;
+	-moz-box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+	-webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+	-o-box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+	-ms-box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+}
+
+button:disabled img
+{
+	-moz-opacity: 0.5;
+	-webkit-opacity: 0.5;
+	-o-opacity: 0.5;
+	-ms-opacity: 0.5;
+	opacity: 0.5;
+}
+
+input.span1, select.span1, textarea.span1
+{
+	width: 50px;
+}
+
+input.span2, select.span2, textarea.span2
+{
+	width: 75px;
+}
+
+input.span3, select.span3, textarea.span3
+{
+	width: 125px;
+}
+
+input.span4, select.span4, textarea.span4
+{
+	width: 200px;
+}
+
+input.span5, select.span5, textarea.span5
+{
+	width: 300px;
+}
+
+/** 
+ * Entradas de formularios
+ */
+fieldset
+{
+	clear: both;
+	display: block;
+	float: none;
+	margin: 0 5px 5px 0;
+	padding: 0 10px;
+	vertical-align: top;
+}
+
+fieldset.inline
+{
+	clear: none;
+	display: inline-block;
+	float: left;
+	padding: 0 10px;
+	vertical-align: top;
+}
+
+fieldset.horizontal
+{
+
+}
+
+fieldset label
+{
+	color: rgba(102, 153, 204, .7);
+	display: block;
+	line-height: 25px;
+}
+
+label.inline-label-error
+{
+	color: #FF0000;
+	display: none;
+	font-size: .9em;
+	padding: 2px;
+	text-align: left;
+}
+
+/**
+ * Contenedor de inputs
+ */
+.control-group
+{
+	margin: 0 0 7px 0;
+	clear: left;
+	float: left;
+}
+
+.control-group .control-label
+{
+	display: block;
+	padding: 2px 3px;
+}
+
+.control-group .control-label.inline
+{
+	display: block;
+	float: left;
+	max-width: 175px;
+	min-width: 175px;
+	padding: 0 5px;
+	text-align: right;
+}
+
+.control-group .control-label.inline + .controls
+{
+	display: block;
+	float: left;
+	padding: 0 0 0 5px;
+}
+
+/**
+ * Radios y checkbox
+ */
+.checkbox,
+.radio
+{
+	padding-left: 18px;
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"]
+{
+	float: left;
+	margin: 0 8px 0 -15px;
+}
+
+.checkbox.inline,
+.radio.inline
+{
+	display: inline-block;
+	margin-bottom: 0;
+	padding-top: 5px;
+	vertical-align: middle;
+}
+
+/**
+ * Formulario horizontal
+ */
+fieldset.horizontal .control-group
+{
+	float: left;
+	clear: none;
+	margin: 0 7px 7px 0;
+}
+
+/**
+ * Acciones del formulario
+ */
+.acciones-form
+{
+	clear: both;
+	display: block;
+	margin: 10px 0 0;
+}
+
+.form-error
+{
+	border-top: 1px solid rgba(0,0,0,.1);
+	color: #FF0000;
+	margin: 0 0 5px;
+	padding: 5px 2px;
+	text-align: center;
+}
