@@ -1545,11 +1545,11 @@ class Eventos extends Model
 		//$pdf->SetFont('helvetica', '', 18);
 		//$pdf->writeHTMLCell('', '', 10, 70, $registro->emp_o_ins, $border=0, $ln=0, $fill=0, $reseth=false, $align='L', $autopadding=false);
 
-		if (isset($registro->foto_fotografia))
+		//if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='10', $y='70', 60, 62); //  40, 42
-		}
+		//	$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='10', $y='70', 60, 62); //  40, 42
+		//}
 
 		// define barcode style
 		$style = array(
@@ -1608,6 +1608,7 @@ EOD;
 		// Close and output PDF document
 		// This method has several options, check the source code documentation for more information.
 		$pdf->Output('gafete_' . time() . '.pdf', 'I');
+		echo "";
 	}
 
 	/**
