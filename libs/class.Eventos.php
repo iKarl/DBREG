@@ -1554,7 +1554,7 @@ class Eventos extends Model
 		if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='6', $y='3', 60, 62); //  40, 42
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='6', $y='3', 6, 6.2); //  40, 42
 		}
 
 		// define barcode style
@@ -1576,7 +1576,7 @@ class Eventos extends Model
 
 		// Codigo de barra
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-140', $y='98', '', 16, 0.4, $style, 'N');
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='8', $y='6.5', '', 16, 0.4, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='8', $y='6.5', '', 1, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
 
