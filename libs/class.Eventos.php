@@ -1475,7 +1475,7 @@ class Eventos extends Model
 		// create new PDF document
 		$orientation = "P"; //PDF_PAGE_ORIENTATION;
 		$pdf_unit = "cm"; // PDF_UNIT;
-		$formato = array(12, 20); // PDF_PAGE_FORMAT
+		$formato = array(20, 12); // PDF_PAGE_FORMAT
 
 		$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
 
