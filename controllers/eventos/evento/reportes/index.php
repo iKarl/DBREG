@@ -419,7 +419,7 @@ class Index_Controller extends Controller
 		}
 	}
 
-	public function rfid()
+	public function rfid($request)
 	{
 		if (isset($request->query))
 		{
