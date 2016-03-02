@@ -421,26 +421,15 @@ class Index_Controller extends Controller
 
 	public function rfid()
 	{
-		$evento = $this->model->evt->getEvento($this->idEvento);
-
-		$asistencia = $this->model->getAsistencias($evento->evt_clave, $evento->evt_idioma);
-		$acompanantes = $this->model->getAcompanantesAsitencia($evento->evt_clave, $evento->evt_idioma);
-
-		$asistencia = array_merge($asistencia, $acompanantes);
-
-		$total = 0;
-		foreach ($asistencia as $serie => $value)
+		if (isset($request->query))
 		{
-			$total += $value['value'];
+			$evento = $this->model->evt->getEvento($this->idEvento);
+			$this->rpt->expReporteRFID($request->query, $evento, $this->func);
 		}
-
-		$this->display(
-			array(
-				'seccion' => $this->seccion,
-				'asistencias' => json_encode($asistencia),
-				'layout' => $this->layoutView,
-				'total' => $total
-			)
-		);
+		else
+		{
+			header ("HTTP/1.1 514 An Error");
+			exit ();
+		}
 	}
 }

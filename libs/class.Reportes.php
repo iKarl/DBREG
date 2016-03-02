@@ -967,5 +967,79 @@ class Reportes extends Model
 			$workbook->close ();
 		}
 	}
+
+	public function expReporteRFID($post, $evento, $func)
+	{
+		// Cargamos la libreria para excel
+		ini_set("include_path", './'. PATH_SMVC . '/' . PATH_EXT . '/PEAR/');
+		require ("PEAR.php");
+		require_once ('Spreadsheet/Excel/Writer.php');
+
+		$registros = array();
+
+		$qry = "SELECT r.id_registro, r.nombre, r.app, r.apm, rf.* 
+			FROM smc_reg_%s_rfid AS rf 
+			JOIN smc_reg_%s AS r ON (r.id_tag = rf.id_tag) 
+		";
+
+		$qry = sprintf($qry, $evento->evt_clave, $evento->evt_clave);
+
+		if ($result = $this->db->hQuery($qry))
+		{
+			if ($this->db->hNumRows() >= 1)
+			{
+				$campos = $this->db->hFetchFields();
+				while ($fila = $this->db->hFetchObject())
+				{
+					$registros[] = $fila;
+				}
+
+				$this->db->hFree();
+			}
+		}
+
+		$workbook = new \Spreadsheet_Excel_Writer ();
+
+		$fTitleHead = $workbook->addFormat ();
+		$fTitleHead->setBold ();
+
+		$workbook->setVersion ( 8 );
+		$worksheet = $workbook->addWorksheet ( 'Registros' );
+
+		if (is_array ( $registros ) && ! empty ( $registros ))
+		{
+
+			$worksheet->write ( 0, 1, "Reporte General RFID", $fTitleHead );
+
+			foreach ( $campos as $k => $campo )
+			{
+				$worksheet->write ( 1, $k, $campo->name );
+			}
+
+			$fila = 3;
+			foreach ( $registros as $registro )
+			{
+
+				$campo = 0;
+				foreach ( $registro as $k => $valor )
+				{
+
+					$worksheet->setInputEncoding ( 'utf-8' );
+
+					$worksheet->writeString ( $fila, $campo, $valor );
+
+					$campo ++;
+
+				}
+
+				$fila ++;
+
+			}
+
+			$workbook->send ( "general.xls" );
+			$workbook->close ();
+
+		}
+	}
 }
 ?>
