@@ -980,6 +980,8 @@ class Reportes extends Model
 		$qry = "SELECT r.id_registro, r.nombre, r.app, r.apm, rf.* 
 			FROM smc_reg_%s_rfid AS rf 
 			JOIN smc_reg_%s AS r ON (r.id_tag = rf.id_tag) 
+			WHERE 1
+			GROUP BY rf.id_tag
 		";
 
 		$qry = sprintf($qry, $evento->evt_clave, $evento->evt_clave);
