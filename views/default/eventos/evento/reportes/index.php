@@ -78,7 +78,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 				</a>
 			</li>
 			<li>
-				<a data-load="seccion" data-opts='{"target":"charts"}' href="{{ seccion }}/?action=rfid">
+				<a href="{{ seccion }}/?action=rfid" target="_blank">
 					<i class="icon-tasks"></i> Reporte RFID
 				</a>
 			</li>
