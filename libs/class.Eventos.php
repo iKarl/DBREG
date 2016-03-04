@@ -2009,7 +2009,7 @@ class Eventos extends Model
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
 		// set font
-		$pdf->SetFont('times', 'B', 22);
+		$pdf->SetFont('times', 'B', 25);
 		//$pdf->Ln(25, true);
 		$pdf->writeHTMLCell('', '', $x='20', $y='100', $nombres, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('', '', $x='', $y='120', $apellidos, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
