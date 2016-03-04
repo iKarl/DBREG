@@ -1525,6 +1525,7 @@ class Eventos extends Model
 		$apellidos = trim($registro->app . ' ' . $registro->apm);
 		$pais = $func->mayusStr($registro->pais_nombreEs);
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
+		$ciudad = $func->mayusStr($registro->ciudad);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
 		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
@@ -1534,11 +1535,16 @@ class Eventos extends Model
 		// Nombre
 		$pdf->SetFont('helvetica', 'B', 22);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='77', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='2', $y='72', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 16);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='87', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='2', $y='82', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+
+		$pdf->SetFont('helvetica', '', 16);
+		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='2', $y='87', $cuidad, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 

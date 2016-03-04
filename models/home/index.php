@@ -47,8 +47,9 @@ class Home_Model extends Model
 		$registros =  array();
 
 		$qry = "SELECT * 
-			FROM smc_reg_EVEN15 
-			WHERE exportado = 0
+			FROM smc_reg_REG15 
+			WHERE leido = 0
+			LIMIT 20
 		";
 
 		if ($this->db->hQuery($qry))
@@ -67,8 +68,8 @@ class Home_Model extends Model
 
 	public function leido($id_registro)
 	{
-		$qry = "UPDATE smc_reg_EVEN15 SET 
-			exportado = 1 
+		$qry = "UPDATE smc_reg_REG15 SET 
+			leido = 1 
 			WHERE id_registro = %d 
 			LIMIT 1
 		";
@@ -85,42 +86,74 @@ class Home_Model extends Model
 
 	public function setRegistro($registro)
 	{
-		$qry = "INSERT INTO smc_reg_EVEN15 SET 
-			idioma = 'es',
-			id_costo = 1,
+		$qry = "INSERT INTO smc_reg_REG15 SET 
+			id_registro = %d
+			id_tag = '%s',
 			folio_registro = %d,
+			clave_evento = '%s',
+			clave_registro = '%s',
 			cat_registro = '%s',
+			idioma = 'es',
+			id_costo = 5,
+			titulo = UPPER('%s'),
 			nombre = UPPER('%s'),
 			app = UPPER('%s'),
+			apm = UPPER('%s'),
 			emp_o_ins = UPPER('%s'),
-			pais = 146,
+			cargo = '%s',
+			email = '%s',
+			pais = %d,
 			nombre_pais = '%s',
+			cp = '%s',
 			estado = '%s',
 			ciudad = '%s',
-			email = '%s',
-			clave_asociada = '%s',
-			tipo_registro = %d,
-			genero = '%s',
 			requiere_factura = 2,
-			status = 'PAG',
-			forma_pago = 'TC',
-			fecha_registro = NOW(),
-			realizado_en = 'IMP'
+			politicas_terminos_condiciones = 1,
+			fecha_registro = '%s'
+			status = '%s',
+			impresion_gafete = %d,
+			comentarios = '%s',
+			gerente = '%s',
+			representante = '%s',
+			aeropuerto = '%s',
+			hotel = '%s',
+			contacto_sac = '%s',
+			leido = %d
+			forma_pago = '%s',
+			realizado_en = '%s'
 		";
 
 		$qry = sprintf($qry,
+			$registro->id_registro,
+			$registro->id_tag,
 			$registro->folio_registro,
+			$registro->clave_evento,
+			$registro->clave_registro,
 			$registro->cat_registro,
+			$registro->titulo,
 			$registro->nombre,
 			$registro->app,
+			$registro->apm,
 			$registro->emp_o_ins,
+			$registro->cargo,
+			$registro->email,
+			$registro->pais,
 			$registro->nombre_pais,
+			$registro->cp,
 			$registro->estado,
 			$registro->ciudad,
-			$registro->email,
-			$registro->clave_asociada,
-			$registro->tipo_registro,
-			$registro->genero
+			$registro->fecha_registro,
+			$registro->status,
+			$registro->impresion_gafete,
+			$registro->comentarios,
+			$registro->gerente,
+			$registro->representante,
+			$registro->aeropuerto,
+			$registro->hotel,
+			$registro->contacto_sac,
+			$registro->leido,
+			$registro->forma_pago,
+			$registro->realizado_en
 		);
 
 		if ($this->db->hQuery($qry))

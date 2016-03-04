@@ -86,17 +86,17 @@ class Index_Controller extends Controller
 
 	public function import($request)
 	{
-		$this->model->newConnect('EVEN15', '201.175.17.88', 'proInt15', 'bAa78#3v20');
+		$this->model->newConnect('DBREG', '54.67.5.42', 'ROD', 'DBREG15');
 
 		$registros = $this->model->import();
 
 		if (!empty($registros))
 		{
-			$this->model->newConnect('SIV', 'localhost', 'gohan', 'zone');
+			$this->model->newConnect('CARDIO', 'localhost', 'prueba', 'testings');
 
 			foreach ($registros as $registro)
 			{
-				if ($registro->tipo_registro == 1) {
+				/*if ($registro->tipo_registro == 1) {
 					$registro->cat_registro = 'CONGRES';
 				} else if ($registro->tipo_registro == 2) {
 					$registro->cat_registro = 'ACOM';
@@ -106,12 +106,12 @@ class Index_Controller extends Controller
 					$registro->cat_registro = 'INVESP';
 				} else {
 					$registro->cat_registro = 'CONGRES';
-				}
+				}*/
 
 				$this->model->setRegistro($registro);
 			}
 
-			$this->model->newConnect('EVEN15', '201.175.17.88', 'proInt15', 'bAa78#3v20');
+			$this->model->newConnect('DBREG', '54.67.5.42', 'ROD', 'DBREG15');
 			foreach ($registros as $registro)
 			{
 				$this->model->leido($registro->id_registro);
