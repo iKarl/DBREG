@@ -1527,7 +1527,7 @@ class Eventos extends Model
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
 		$ciudad = $func->mayusStr($registro->ciudad);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
-
+echo $ciudad;
 		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
@@ -1543,8 +1543,7 @@ class Eventos extends Model
 
 		$pdf->SetFont('helvetica', '', 12);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='87', $registro->cuidad, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-
+		$pdf->writeHTMLCell('90', '', $x='2', $y='87', $cuidad, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
