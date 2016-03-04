@@ -19,7 +19,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 	<ul class="nav-seccion">
 		<li>
 			<a class="btn btn-primary" data-load="accion" href="{{ seccion }}/?action=nuevoRegistro" title="Agregar un registro"><i class="icon-plus-sign icon-white"></i> Agregar</a>
-			<button class="btn btn-warning" id="importarInet" type="button">Importar</button>
+			<!--<button class="btn btn-warning" id="importarInet" type="button">Importar</button>-->
 		</li>
 		<li>
 			<!--<span class="label">Registro</span>
