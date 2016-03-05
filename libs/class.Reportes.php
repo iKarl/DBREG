@@ -981,7 +981,6 @@ class Reportes extends Model
 			FROM smc_reg_%s_rfid AS rf 
 			JOIN smc_reg_%s AS r ON (r.id_tag = rf.id_tag) 
 			WHERE 1
-			GROUP BY rf.id_tag
 		";
 
 		$qry = sprintf($qry, $evento->evt_clave, $evento->evt_clave);
