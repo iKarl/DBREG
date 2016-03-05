@@ -977,7 +977,7 @@ class Reportes extends Model
 
 		$registros = array();
 
-		$qry = "SELECT r.id_registro, r.nombre, r.app, r.apm, rf.* 
+		$qry = "SELECT r.id_registro AS id, r.nombre, r.app, r.apm, rf.* 
 			FROM smc_reg_%s_rfid AS rf 
 			JOIN smc_reg_%s AS r ON (r.id_tag = rf.id_tag) 
 			WHERE 1
