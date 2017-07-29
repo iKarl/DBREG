@@ -38,7 +38,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 					<div class="control-group">
 						<label class="control-label" for="username">Usuario:</label>
 						<div class="controls">
-							<input autofocus="autofocus" class="input-large" type="email" name="username" id="username" maxlength="120" value="@tecnoregistro.mx" required />
+							<input autofocus="autofocus" class="input-large" type="email" name="username" id="username" maxlength="120" value="@tecnoregistro.com.mx" required />
 						</div>
 					</div>
 

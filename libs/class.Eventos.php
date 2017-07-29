@@ -1533,17 +1533,17 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		// Nombre
-		$pdf->SetFont('helvetica', 'B', 22);
+		$pdf->SetFont('helvetica', 'B', 30);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='75', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='', $y='40', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
-		$pdf->SetFont('helvetica', '', 16);
+		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='84', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='', $y='60', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 12);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='2', $y='90', $ciudad, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		//$pdf->writeHTMLCell('90', '', $x='2', $y='90', $ciudad, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		//$pdf->writeHTMLCell('120', '20', $x='45', $y='100', $registro->talleres[0]->eni_nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
@@ -1581,7 +1581,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-140', $y='98', '', 16, 0.4, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-55', $y='80', '', 14, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
@@ -2007,16 +2007,16 @@ class Eventos extends Model
 		$app = $func->mayusStr($registro->app);
 		$apm = $func->mayusStr($registro->apm);
 		$apellidos = trim($registro->app . ' ' . $registro->apm);
-		$nombres = $registro->titulo . ' ' . $nombre . ' ' . $apellidos;
+		$nombres = $func->mayusStr($registro->titulo) . ' ' . $nombre . ' ' . $apellidos;
 		$pais = $func->mayusStr($registro->pais_nombreEs);
 		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
 		$cargo = $registro->cargo;
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
 		// set font
-		$pdf->SetFont('helvetica', 'B', 25);
+		$pdf->SetFont('helvetica', 'B', 29);
 		//$pdf->Ln(25, true);
-		$pdf->writeHTMLCell('', '', $x='15', $y='90', $nombres, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='', $y='84', $nombres, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('', '', $x='', $y='120', $apellidos, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 
 		/*if (isset($post->total_horas) AND $post->total_horas >= 6)

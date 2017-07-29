@@ -2167,7 +2167,7 @@ class Index_Controller extends Controller
 
 					$this->json = array(
 						"status" => "funcion",
-						"nomFuncion" => "lecturaImpresion", // impresionGafete
+						"nomFuncion" => "impresionGafete", // lecturaImpresion
 						"seccion" => $this->seccion . "/?action=imprimirGafete&id=" . $registro->id_registro,
 						'idReg' => $registro->id_registro,
 						"totalRegistrosImp" => $totalRegistrosImp
