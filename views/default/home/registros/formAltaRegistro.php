@@ -81,6 +81,19 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 					</div>
 				</div>
 				<div class="control-group">
+					<label class="control-label" for="pais">País:</label>
+					<div class="controls">
+						<select class="" id="pais" name="pais">
+							<option value="">Seleccione:</option>
+							{% for pais in paises %}
+							<option value="{{ pais.pais_idPais }}"{{ pais.pais_idPais == 146 ? ' selected' : '' }}>{{ pais.pais_nombreEs }}</option>
+							{% else %}
+							<option value="">No se recuperaron los paises</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="titulo">Titulo:</label>
 					<div class="controls">
 						<select class="span2" id="titulo" name="titulo">
@@ -93,13 +106,13 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="rfc">RFC:</label>
 					<div class="controls">
 						<input class="span2" id="rfc" name="rfc" type="text" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="curp">CURP:</label>
 					<div class="controls">
 						<input class="span2" id="curp" name="curp" type="text" />
@@ -117,7 +130,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<input class="span3" id="cargo" name="cargo" type="text" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="genero">Genero:</label>
 					<div class="controls">
 						<select class="span2" id="genero" name="genero">
@@ -147,13 +160,13 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<input class="span3" id="email" name="email" type="email" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="clave_asociada">Clave:</label>
 					<div class="controls">
 						<input class="span3" id="clave_asociada" name="clave_asociada" type="text" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="id_tag">ID Tag: <span class="muted">{{ registro.id_tag.0 }}</span></label>
 					<div class="controls">
 						<input class="input-large" id="id_tag" name="id_tag" type="text" value="{{ registro.id_tag.1 }}" />
@@ -177,21 +190,21 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="id_costo">Costo:</label>
 					<div class="controls">
 						<div class="input-append">
-							<select class="span2" id="id_costo" name="id_costo">
-								<option value="">Seleccione:</option>
+							<select class="span2" id="id_costos" name="id_costo">
+								<option value="5">Seleccione:</option>
 							</select>
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="forma_pago">Forma de Pago:</label>
 					<div class="controls">
-						<select class="span2" id="forma_pago" name="forma_pago">
-							<option value="">Seleccione:</option>
+						<select class="span2" id="forma_pagos" name="forma_pago">
+							<option value="EF">Seleccione:</option>
 							{% for formaPago in formasPago %}
 							<option value="{{ formaPago.fpn_clave }}">{{ formaPago.fpn_nombre }}</option>
 							{% else %}
@@ -203,8 +216,8 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 				<div class="control-group">
 					<label class="control-label" for="status">Status:</label>
 					<div class="controls">
-						<select class="span2" id="status" name="status">
-							<option value="">Seleccione:</option>
+						<select class="span2" id="statuss" name="status">
+							<option value="COR">Seleccione:</option>
 							{% for statusReg in statusRegs %}
 							<option value="{{ statusReg.esr_clave }}"{{ statusReg.esr_clave == "PAG" ? ' selected' : '' }}>{{ statusReg.esr_nombre }}</option>
 							{% else %}
@@ -213,13 +226,13 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="folio_pago">Folio de control:</label>
 					<div class="controls">
 						<input class="span2" id="folio_pago" name="folio_pago" type="text" value="{{ registro.folio_pago }}" />
 					</div>
 				</div>
-				<div class="control-group hide">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="tipo_cambio_divisa">Tipo de cambio:</label>
 					<div class="controls">
 						<div class="input-prepend">
@@ -234,13 +247,13 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<textarea class="span4" id="comentarios" name="comentarios" placeholder="..." rows="3"></textarea>
 					</div>
 				</div>
-				<div class="control-group hide">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="id_clon">Clonar información:</label>
 					<div class="controls">
 						<input class="span2" type="text" id="id_clon" name="id_clon" placeholder="ID Registro" />
 					</div>
 				</div>				
-				<div class="control-group" id="module-photo">
+				<div class="control-group" id="module-photo" style="display: none;">
 					<label class="control-label">Fotografia:</label>
 					<a class="btn btn-info" data-load="modal" id="hacer-fotografia" href="{{ seccion }}/?action=fotoWeb">
 						<i class="icon-picture icon-white"></i> Tomar fotografia

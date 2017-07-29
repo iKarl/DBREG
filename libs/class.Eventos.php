@@ -1523,23 +1523,63 @@ class Eventos extends Model
 		$app = $func->mayusStr($registro->app);
 		$apm = $func->mayusStr($registro->apm);
 		$apellidos = trim($registro->app . ' ' . $registro->apm);
-		$pais = $func->mayusStr($registro->pais_nombreEs);
-		$emp_o_ins =  $func->mayusStr($registro->emp_o_ins);
+		$pais = $func->capitalizarStr($registro->pais_nombreEs);
+		$empresa =  $func->capitalizarStr($registro->emp_o_ins);
 		$ciudad = $func->mayusStr($registro->ciudad);
+		$nombreApp = $func->capitalizarStr($nombre . " " . $app);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
 		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
-		// Nombre
-		$pdf->SetFont('helvetica', 'B', 30);
-		//$pdf->writeHTMLCell('100', '', $x='-15', $y='80', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('', '', $x='', $y='40', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		if ($registro->cat_registro == "DELADM") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "MASOCIA") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->writeHTMLCell('', '', $x='', $y='60', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "PAISOBS") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "ORGAN") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "INVESP") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', "Invitado", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "PRECOM") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', "Presidente del " . $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else if ($registro->cat_registro == "SECEJECITE") {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', "Secretario Ejecutivo de la CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		} else {
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='40', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', 'B', 18);
+			$pdf->writeHTMLCell('', '', $x='', $y='50', "CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		}
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('', '', $x='', $y='60', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		//$pdf->writeHTMLCell('', '', $x='', $y='60', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 12);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
@@ -1581,7 +1621,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-55', $y='80', '', 14, 0.4, $style, 'N');
+		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-55', $y='80', '', 14, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------

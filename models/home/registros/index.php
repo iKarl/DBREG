@@ -134,8 +134,9 @@ class Index_Model extends Model
 			`apm` = UPPER('%s') ,
 			`curp` = UPPER('%s') ,
 			`rfc` = UPPER('%s') ,
+			`pais` = %d ,
 
-			`emp_o_ins` = '%s' ,
+			`emp_o_ins` = UPPER('%s') ,
 			`cargo` = '%s' ,
 
 			`comentarios` = '%s' ,
@@ -171,6 +172,7 @@ class Index_Model extends Model
 			$post['apm'],
 			$post['curp'],
 			$post['rfc'],
+			$post['pais'],
 			$post['emp_o_ins'],
 			$post['cargo'],
 
@@ -642,6 +644,7 @@ class Index_Model extends Model
 			`emp_o_ins` = UPPER('%s') ,
 			`cargo` = UPPER('%s') ,
 			`email` = '%s' ,
+			`pais` = %d ,
 
 			`forma_pago` = '%s' ,
 			`status` = '%s' ,
@@ -675,6 +678,7 @@ class Index_Model extends Model
 			$post['emp_o_ins'],
 			$post['cargo'],
 			$post['email'],
+			$post['pais'],
 
 			$post['forma_pago'],
 			$post['status'],

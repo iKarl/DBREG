@@ -81,6 +81,31 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 					</div>
 				</div>
 				<div class="control-group">
+					<label class="control-label" for="pais">País:</label>
+					<div class="controls">
+						<select class="" id="pais" name="pais">
+							<option value="">Seleccione:</option>
+							{% for pais in paises %}
+							<option value="{{ pais.pais_idPais }}"
+
+							{% if registro.pais %}
+								{% if registro.pais == pais.pais_idPais %}
+									 selected
+								{% endif %}
+							{% else %}
+								{% if pais.pais_idPais == 146 %}
+									selected
+								{% endif %}
+							{% endif %}
+
+							>{{ pais.pais_nombreEs }}</option>
+							{% else %}
+							<option value="">No se recuperaron los paises</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="titulo">Titulo:</label>
 					<div class="controls">
 						<select class="span2" id="titulo" name="titulo">
@@ -93,25 +118,19 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="rfc">RFC:</label>
 					<div class="controls">
 						<input class="span2" id="rfc" name="rfc" type="text" value="{{ registro.rfc }}" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="curp">CURP:</label>
 					<div class="controls">
 						<input class="span2" id="curp" name="curp" type="text" value="{{ registro.curp }}" />
 					</div>
 				</div>
-				<div class="control-group">
-					<label class="control-label" for="cargo">Cargo o Puesto:</label>
-					<div class="controls">
-						<input class="span2" id="cargo" name="cargo" type="text" value="{{ registro.cargo }}" />
-					</div>
-				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="genero">Genero:</label>
 					<div class="controls">
 						<select class="span2" id="genero" name="genero">
@@ -142,18 +161,24 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 					</div>
 				</div>
 				<div class="control-group">
+					<label class="control-label" for="cargo">Cargo o Puesto:</label>
+					<div class="controls">
+						<input class="span2" id="cargo" name="cargo" type="text" value="{{ registro.cargo }}" />
+					</div>
+				</div>
+				<div class="control-group">
 					<label class="control-label" for="email">Correo electrónico:</label>
 					<div class="controls">
 						<input class="span3" id="email" name="email" type="email" value="{{ registro.email }}" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="clave_asociada">Clave:</label>
 					<div class="controls">
 						<input class="span3" id="clave_asociada" name="clave_asociada" type="text" value="{{ registro.clave_asociada }}" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="id_tag">ID Tag: <span class="muted">{{ registro.id_tag.0 }}</span></label>
 					<div class="controls">
 						<input class="input-large" id="id_tag" name="id_tag" type="text" value="{{ registro.id_tag.1 }}" />
@@ -177,11 +202,11 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="id_costo">Costo:</label>
 					<div class="controls">
 						<div class="input-append">
-							<select class="span2" id="id_costo" name="id_costo">
+							<select class="span2" id="id_costos" name="id_costo">
 								<option value="">Seleccione:</option>
 								{% for key, costoCategoria in costosCategoria %}
 								<option value="{{ key }}"{{ registro.id_costo == key ? ' selected' : '' }}>{{ costoCategoria.nombre }} - {{ costoCategoria.costo }}</option>
@@ -192,10 +217,10 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="forma_pago">Forma de Pago:</label>
 					<div class="controls">
-						<select class="span2" id="forma_pago" name="forma_pago">
+						<select class="span2" id="forma_pagos" name="forma_pago">
 							<option value="">Seleccione:</option>
 							{% for formaPago in formasPago %}
 							<option value="{{ formaPago.fpn_clave }}"{{ registro.forma_pago == formaPago.fpn_clave ? ' selected' : '' }}>{{ formaPago.fpn_nombre }}</option>
@@ -218,7 +243,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label class="control-label" for="folio_pago">Folio de control:</label>
 					<div class="controls">
 						<input class="span2" id="folio_pago" name="folio_pago" type="text" value="{{ registro.folio_pago }}" />
@@ -239,7 +264,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<textarea class="span4" id="comentarios" name="comentarios" placeholder="..." rows="3">{{ registro.comentarios }}</textarea>
 					</div>
 				</div>
-				<div class="control-group" id="module-photo">
+				<div class="control-group" id="module-photo" style="display: none;">
 					<label class="control-label">Fotografia:</label>
 				
 					<a class="btn btn-info" data-load="modal" id="hacer-fotografia" href="{{ seccion }}/?action=fotoWeb" {{ (registro.foto_fotografia != '') ? ' style="display: none;"' : '' }}>
@@ -255,7 +280,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 					</a>
 					{% endif %}
 				</div>
-				<div class="control-group">
+				<div class="control-group" style="display: none;">
 					<label for="costo_total" class="control-label text-error lead"><strong>Total:</strong></label>
 					<input type="text" class="span2" name="costo_total" id="costo_total" value="{{ registro.costo_total|number_format(2, '.', ',') }}" style="font-size: 1.2em;" /><br />
 					<label for="numero_factura" class="control-label text-error lead"><strong>No. Factura:</strong></label>

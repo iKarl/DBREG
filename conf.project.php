@@ -69,7 +69,7 @@ define ("USE_DB", true);
 define ("DB_HANDLER", "MySQLi");
 define ("DB_SERVERNAME", "localhost");
 define ("DB_PORT", "3306");
-define ("DB_USERNAME", "root");
-define ("DB_USERPASS", "t3cn0w3b");
-define ("DB_NAME", "MICHEL");
+define ("DB_USERNAME", "");
+define ("DB_USERPASS", "");
+define ("DB_NAME", "");
 ?>
