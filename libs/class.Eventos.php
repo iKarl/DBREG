@@ -1587,8 +1587,8 @@ class Eventos extends Model
 			$pdf->writeHTMLCell('90', '', $x='110', $y='75', "Secretario Ejecutivo de la CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else {
 			$pdf->SetFont('helvetica', 'B', 18);
-			$pdf->writeHTMLCell('90', '', $x='10', $y='78', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-			$pdf->writeHTMLCell('90', '', $x='110', $y='78', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='10', $y='81', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='110', $y='81', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='10', $y='98', "CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='110', $y='98', "CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
