@@ -1535,11 +1535,11 @@ class Eventos extends Model
 
 		if ($registro->cat_registro == "DELADM") {
 			$pdf->SetFont('helvetica', 'B', 20);
-			$pdf->writeHTMLCell('90', '', $x='5', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-			$pdf->writeHTMLCell('90', '', $x='115', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 20);
-			$pdf->writeHTMLCell('90', '', $x='5', $y='98', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-			$pdf->writeHTMLCell('90', '', $x='115', $y='98', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='5', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='115', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "MASOCIA") {
 			$pdf->SetFont('helvetica', 'B', 20);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='86', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
