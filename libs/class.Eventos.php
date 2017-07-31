@@ -1593,8 +1593,8 @@ class Eventos extends Model
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 16);
-			$pdf->writeHTMLCell('90', '', $x='5', $y='98', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-			$pdf->writeHTMLCell('90', '', $x='115', $y='98', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='5', $y='104', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->writeHTMLCell('90', '', $x='115', $y='104', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else {
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
