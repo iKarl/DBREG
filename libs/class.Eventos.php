@@ -1534,14 +1534,14 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		if ($registro->cat_registro == "DELADM") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 20);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "MASOCIA") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='86', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='86', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
@@ -1551,42 +1551,42 @@ class Eventos extends Model
 			$pdf->writeHTMLCell('90', '', $x='5', $y='112', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='112', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "PAISOBS") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 20);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "ORGAN") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "INVESP") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', "Invitado", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', "Invitado", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "PRECOM") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', "Presidente del " . $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', "Presidente del " . $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "SECEJECITE") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='90', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='102', "Secretario Ejecutivo de la CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='102', "Secretario Ejecutivo de la CITEL", $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else if ($registro->cat_registro == "TALLER") {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='86', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='86', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
@@ -1596,7 +1596,7 @@ class Eventos extends Model
 			$pdf->writeHTMLCell('90', '', $x='5', $y='112', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='112', $pais, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		} else {
-			$pdf->SetFont('helvetica', 'B', 20);
+			$pdf->SetFont('helvetica', 'B', 18);
 			$pdf->writeHTMLCell('90', '', $x='5', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->writeHTMLCell('90', '', $x='115', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 			$pdf->SetFont('helvetica', 'B', 18);
