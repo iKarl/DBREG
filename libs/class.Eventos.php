@@ -1527,6 +1527,7 @@ class Eventos extends Model
 		$empresa =  $func->capitalizarStr($registro->emp_o_ins);
 		$ciudad = $func->mayusStr($registro->ciudad);
 		$nombreApp = $func->capitalizarStr($nombre . " " . $app);
+		$cargo = $func->capitalizarStr($registro->cargo);
 		//$categoria = $this->getNombreCategoria($idEvento, $registro->cat_registro);
 
 		//$img_file = './' . PATH_IMAGES . '/gafetes/gafete.png';
@@ -1534,11 +1535,11 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		$pdf->SetFont('helvetica', 'B', 18);
-		$pdf->writeHTMLCell('90', '', $x='5', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='115', $y='83', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='5', $y='63', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='115', $y='63', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 18);
-		$pdf->writeHTMLCell('90', '', $x='5', $y='98', $registro->cargo, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='115', $y='98', $registro->cargo, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='5', $y='68', $cargo, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('90', '', $x='115', $y='68', $cargo, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
