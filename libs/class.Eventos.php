@@ -1534,7 +1534,7 @@ class Eventos extends Model
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
-		$pdf->SetFont('helvetica', 'B', 24);
+		$pdf->SetFont('helvetica', 'B', 23);
 		$pdf->writeHTMLCell('90', '', $x='5', $y='45', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->writeHTMLCell('90', '', $x='115', $y='45', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 16);
