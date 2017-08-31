@@ -1855,7 +1855,7 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
-		$fecha = mktime(23, 59, 59, 8, 31, 2017);
+		$fecha = mktime(23, 59, 59, 8, 29, 2017);
         $today = new \DateTime("now");
 
         if ($today->getTimestamp() > $fecha) {
