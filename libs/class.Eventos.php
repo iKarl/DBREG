@@ -1869,8 +1869,8 @@ class Eventos extends Model
 
 		// Nombre
 		$pdf->SetFont($fontname, 'B', 7);
-		$pdf->writeHTMLCell('2.8', '', 2.4, 4, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('2.8', '', 2.4, 4.6, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('2.8', '', 2.4, 3.5, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('2.8', '', 2.4, 4.1, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		if (isset($registro->foto_fotografia)) //  && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia)
 		{
