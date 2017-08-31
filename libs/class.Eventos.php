@@ -1855,11 +1855,11 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
-		if ($registro->cat_registro == 'GOB') {
+		//if ($registro->cat_registro == 'GOB') {
 			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
-		} else {
-			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
-		}
+		//} else {
+			//$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
+		//}
 
 		$pdf->Image($img_file, 0, 0, 5.5, 8.5, '', '', '', false, 300, '', false, false, 0);
 
