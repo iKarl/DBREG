@@ -1855,7 +1855,7 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
-		if ($registro->cat_registro == 'DIA1') {
+		if ($registro->cat_registro == 'DIAUNO') {
 			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
 		} else {
 			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
