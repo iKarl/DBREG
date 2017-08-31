@@ -253,7 +253,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<input class="span2" type="text" id="id_clon" name="id_clon" placeholder="ID Registro" />
 					</div>
 				</div>				
-				<div class="control-group" id="module-photo" style="display: none;">
+				<div class="control-group" id="module-photo">
 					<label class="control-label">Fotografia:</label>
 					<a class="btn btn-info" data-load="modal" id="hacer-fotografia" href="{{ seccion }}/?action=fotoWeb">
 						<i class="icon-picture icon-white"></i> Tomar fotografia

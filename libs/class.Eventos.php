@@ -1467,7 +1467,7 @@ class Eventos extends Model
 	/**
 	 * Metodo que genera el PDF del congresista
 	 */
-	public function cargarGafetePDF($idEvento, $evento, $registro, $func, $ctrl = null)
+	public function cargarGafetePDFREAL($idEvento, $evento, $registro, $func, $ctrl = null)
 	{
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/config/lang/eng.php');
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
@@ -1788,7 +1788,7 @@ class Eventos extends Model
 	/**
 	 * Metodo que genera el PDF del congresista
 	 */
-	public function cargarGafetePDFPVC($idEvento, $evento, $registro, $func)
+	public function cargarGafetePDF($idEvento, $evento, $registro, $func)
 	{
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/config/lang/eng.php');
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
@@ -1799,7 +1799,7 @@ class Eventos extends Model
 		$formato = array(8.5, 5.5); // PDF_PAGE_FORMAT
 
 		$pdf = new TCPDF($orientation, $pdf_unit, $formato, true, 'UTF-8', false);
-		$fontname = $pdf->addTTFfont('./' . PATH_VIEWS . '/fonts/Calibri.ttf', 'TrueTypeUnicode', '', 32);
+		$fontname = "helvetica";//$pdf->addTTFfont('./' . PATH_VIEWS . '/fonts/Calibri.ttf', 'TrueTypeUnicode', '', 32);
 
 		// set document information
 		$pdf->SetCreator("Tecnoregistro");
@@ -1855,50 +1855,49 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
-		$color_font = '#ffffff';
 		if ($registro->cat_registro == 'GOB') {
-			$img_file = './' . PATH_IMAGES . '/gafetes/AGA/GEN.png';
+			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
 		} else {
-			$img_file = './' . PATH_IMAGES . '/gafetes/AGA/' . $registro->cat_registro . '.png';
+			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
 		}
 
 		$pdf->Image($img_file, 0, 0, 5.5, 8.5, '', '', '', false, 300, '', false, false, 0);
 
 		$nombre = $func->mayusStr($registro->nombre);
-		$apellidos = $func->mayusStr($registro->app . " " . $registro->apm);
+		$apellidos = $func->mayusStr($registro->app);
 		$cargo = $func->mayusStr($registro->cargo);
 
 		// Nombre
-		$pdf->SetFont($fontname, '', 13);
-		$pdf->writeHTMLCell('5.0', '', 0.3, 2.5, '<div style="color: ' . $color_font . '">' . $nombre . '</div>', $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
-		$pdf->writeHTMLCell('5.0', '', 0.3, 3.1, '<div style="color: ' . $color_font . '">' . $apellidos . '</div>', $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
+		$pdf->SetFont($fontname, 'B', 7);
+		$pdf->writeHTMLCell('2.8', '', 2.4, 4, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('2.8', '', 2.4, 4.6, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
-		if (isset($registro->fotografia) && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia))
+		if (isset($registro->foto_fotografia)) //  && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia)
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			//$pdf->Image('@' . base64_decode($registro->fotografia), 0.2, 2, 2.5, 3.3);
-			$pdf->Image('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia, 0.3, 3.90, 2.2, 2.75);
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), 0.4, 3.5, 1.7, 2.4);
+			//$pdf->Image('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia, 0.3, 3.90, 2.2, 2.75);
 		}
 
 		// define barcode style
 		$style = array(
 			'align' => 'C',
-			'stretch' => false,
+			'stretch' => true,
 			'fitwidth' => true,
 			'cellfitalign' => 'C',
 			'border' => false,
-			'hpadding' => 'auto',
-			'vpadding' => 'auto',
+			'hpadding' => '.1',
+			'vpadding' => '.1',
 			'fgcolor' => array(0,0,0),
 			'bgcolor' => array(255,255,255), //array(255,255,255),
 			'text' => true,
 			'font' => 'helvetica',
-			'fontsize' => 6,
-			'stretchtext' => 8
+			'fontsize' => 4,
+			'stretchtext' => 4
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 0.7, 7.0, 4, 1, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 2.30, 5.3, 3, 1, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 

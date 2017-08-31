@@ -264,7 +264,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						<textarea class="span4" id="comentarios" name="comentarios" placeholder="..." rows="3">{{ registro.comentarios }}</textarea>
 					</div>
 				</div>
-				<div class="control-group" id="module-photo" style="display: none;">
+				<div class="control-group" id="module-photo">
 					<label class="control-label">Fotografia:</label>
 				
 					<a class="btn btn-info" data-load="modal" id="hacer-fotografia" href="{{ seccion }}/?action=fotoWeb" {{ (registro.foto_fotografia != '') ? ' style="display: none;"' : '' }}>
