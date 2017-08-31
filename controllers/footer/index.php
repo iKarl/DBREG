@@ -23,7 +23,7 @@ class Footer_Controller extends Controller
 
 	public function inicio()
 	{
-		$evento = $this->model->evt->getEvento(2);
+		$evento = $this->model->evt->getEvento(3);
 
 		$series = $this->model->concentrado($evento->evt_clave, $evento->evt_idioma);
 		$acompanantes = $this->model->getAcompanantes($evento->evt_clave, $evento->evt_idioma);
