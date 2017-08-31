@@ -1868,7 +1868,7 @@ class Eventos extends Model
 		$cargo = $func->mayusStr($registro->cargo);
 
 		// Nombre
-		$pdf->SetFont($fontname, 'B', 7);
+		$pdf->SetFont($fontname, 'B', 8);
 		$pdf->writeHTMLCell('2.8', '', 2.4, 3.5, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->writeHTMLCell('2.8', '', 2.4, 4.1, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
