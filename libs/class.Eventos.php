@@ -1855,8 +1855,17 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
+		$fecha = mktime(23, 59, 59, 8, 31, 2017);
+        $today = new \DateTime("now");
+
+        if ($today->getTimestamp() > $fecha) {
+        	$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
+        } else {
+        	$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
+        }
+
 		//if ($registro->cat_registro == 'GOB') {
-			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
+			//$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
 		//} else {
 			//$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
 		//}
