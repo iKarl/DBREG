@@ -1898,7 +1898,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 3.4, 6.9, 2.5, .70, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 3.45, 6.8, 2.5, .70, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 
