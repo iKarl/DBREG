@@ -1868,7 +1868,7 @@ class Eventos extends Model
 		$empresa = $func->mayusStr($registro->emp_o_ins);
 
 		// Nombre
-		$pdf->SetFont($fontname, 'B', 8);
+		$pdf->SetFont($fontname, 'B', 9);
 		$pdf->writeHTMLCell('4.2', '', '.65', 5.9, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->writeHTMLCell('4.2', '', '.65', 6.5, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->writeHTMLCell('4.2', '', '', 7.1, $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
@@ -1898,7 +1898,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 3.45, 6.8, 2.5, .70, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 3.2, 6.9, 2.5, .70, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 
