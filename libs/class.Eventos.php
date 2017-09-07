@@ -1855,11 +1855,11 @@ class Eventos extends Model
 			$color_font = 'Black';
 		}*/
 
-		if ($registro->cat_registro == 'DIAUNO') {
-			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
-		} else {
-			$img_file = './' . PATH_IMAGES . '/gafetes/M_D_2.jpg';
-		}
+		//if ($registro->cat_registro == 'DIAUNO') {
+		//	$img_file = './' . PATH_IMAGES . '/gafetes/M_D_1.jpg';
+		//} else {
+			$img_file = './' . PATH_IMAGES . '/gafetes/bg.png';
+		//}
 
 		$pdf->Image($img_file, 0, 0, 5.5, 8.5, '', '', '', false, 300, '', false, false, 0);
 
@@ -1869,13 +1869,13 @@ class Eventos extends Model
 
 		// Nombre
 		$pdf->SetFont($fontname, 'B', 9);
-		$pdf->writeHTMLCell('2.8', '', 2.4, 3.5, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('2.8', '', 2.4, 4.1, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 5.2, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 5.7, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		if (isset($registro->foto_fotografia)) //  && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia)
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), 0.4, 3.5, 1.7, 2.4);
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), 2.1, 3, 1.5, 2.0);
 			//$pdf->Image('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia, 0.3, 3.90, 2.2, 2.75);
 		}
 
@@ -1897,7 +1897,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 2.30, 5.3, 3, 1, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 2.91, 6.5, 2.5, .90, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 
