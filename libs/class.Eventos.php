@@ -1865,17 +1865,18 @@ class Eventos extends Model
 
 		$nombre = $func->mayusStr($registro->nombre);
 		$apellidos = $func->mayusStr($registro->app);
-		$cargo = $func->mayusStr($registro->cargo);
+		$empresa = $func->mayusStr($registro->emp_o_ins);
 
 		// Nombre
-		$pdf->SetFont($fontname, 'B', 9);
-		$pdf->writeHTMLCell('4.2', '', '.65', 5.2, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('4.2', '', '.65', 5.7, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->SetFont($fontname, 'B', 8);
+		$pdf->writeHTMLCell('4.2', '', '.65', 5.9, $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 6.5, $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 7.1, $empresa, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		if (isset($registro->foto_fotografia)) //  && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia)
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), 2.1, 3, 1.5, 2.0);
+			$pdf->Image('@' . base64_decode($registro->foto_fotografia), 1.5, 2.8, 2.5, 3.0);
 			//$pdf->Image('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia, 0.3, 3.90, 2.2, 2.75);
 		}
 
@@ -1897,7 +1898,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 2.91, 6.5, 2.5, .90, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 1.5, 7.75, 2.5, .70, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 
