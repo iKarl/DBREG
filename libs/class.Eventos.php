@@ -1869,9 +1869,9 @@ class Eventos extends Model
 
 		// Nombre
 		$pdf->SetFont($fontname, 'B', 8);
-		$pdf->writeHTMLCell('4.2', '', '.65', 5.9, $nombre, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('4.2', '', '.65', 6.5, $apellidos, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('4.2', '', '.65', 7.1, $empresa, $border=1, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 5.9, $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '.65', 6.5, $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('4.2', '', '', 7.1, $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
 
 		if (isset($registro->foto_fotografia)) //  && is_file('./' . PATH_IMAGES . '/agaFotos/' . $registro->fotografia)
 		{
@@ -1898,7 +1898,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 1.5, 7.75, 2.5, .70, 0.09, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', 1.5, 7.1, 2.5, .70, 0.09, $style, 'N');
 
 		// ---------------------------------------------------------
 
