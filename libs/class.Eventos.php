@@ -1467,7 +1467,7 @@ class Eventos extends Model
 	/**
 	 * Metodo que genera el PDF del congresista
 	 */
-	public function cargarGafetePDFREAL($idEvento, $evento, $registro, $func, $ctrl = null)
+	public function cargarGafetePDF($idEvento, $evento, $registro, $func, $ctrl = null)
 	{
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/config/lang/eng.php');
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
@@ -1522,7 +1522,7 @@ class Eventos extends Model
 		$nombre = $func->mayusStr($registro->nombre);
 		$app = $func->mayusStr($registro->app);
 		$apm = $func->mayusStr($registro->apm);
-		$apellidos = trim($registro->app . ' ' . $registro->apm);
+		$apellidos = $func->mayusStr(trim($registro->app . ' ' . $registro->apm));
 		$pais = $func->capitalizarStr($registro->pais_nombreEs);
 		$empresa =  $func->capitalizarStr($registro->emp_o_ins);
 		$ciudad = $func->mayusStr($registro->ciudad);
@@ -1535,11 +1535,13 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		$pdf->SetFont('helvetica', 'B', 23);
-		$pdf->writeHTMLCell('90', '', $x='5', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('110', '', $x='5', $y='15', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		//$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 16);
-		$pdf->writeHTMLCell('90', '', $x='5', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
-		$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('110', '', $x='5', $y='25', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		//$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->SetFont('helvetica', 'B', 8);
+		$pdf->writeHTMLCell('110', '', $x='5', $y='20', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
@@ -1561,11 +1563,11 @@ class Eventos extends Model
 		//$pdf->SetFont('helvetica', '', 18);
 		//$pdf->writeHTMLCell('', '', 10, 70, $registro->emp_o_ins, $border=0, $ln=0, $fill=0, $reseth=false, $align='L', $autopadding=false);
 
-		if (isset($registro->foto_fotografia))
+		/*if (isset($registro->foto_fotografia))
 		{
 			//echo '<img src="data:' . $registro->foto_mime . ';base64,' . $registro->foto_fotografia . '" />';
-			$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='52', $y='7', 30, 32); //  40, 42
-		}
+			//$pdf->Image('@' . base64_decode($registro->foto_fotografia), $x='52', $y='7', 30, 32); //  40, 42
+		}*/
 
 		// define barcode style
 		$style = array(
@@ -1585,7 +1587,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='-55', $y='80', '', 14, 0.4, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='0', $y='35', '', 14, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
@@ -1788,7 +1790,7 @@ class Eventos extends Model
 	/**
 	 * Metodo que genera el PDF del congresista
 	 */
-	public function cargarGafetePDF($idEvento, $evento, $registro, $func)
+	public function cargarGafetePDFPVC($idEvento, $evento, $registro, $func)
 	{
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/config/lang/eng.php');
 		require_once('./'. PATH_SMVC . '/' . PATH_EXT . '/tcpdf/tcpdf.php');
