@@ -1538,10 +1538,10 @@ class Eventos extends Model
 		$pdf->writeHTMLCell('', '', $x='', $y='5', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', '', 19);
-		$pdf->writeHTMLCell('', '', $x='', $y='7', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='', $y='13', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', '', 6);
-		$pdf->writeHTMLCell('35', '', $x='75', $y='13', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
+		$pdf->writeHTMLCell('35', '', $x='75', $y='33', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
@@ -1587,7 +1587,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='25', $y='23', '', 14, 0.4, $style, 'N');
+		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='25', $y='33', '', 14, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
