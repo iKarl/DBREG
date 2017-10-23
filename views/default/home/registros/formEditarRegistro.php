@@ -202,11 +202,11 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="id_costo">Costo:</label>
 					<div class="controls">
 						<div class="input-append">
-							<select class="span2" id="id_costos" name="id_costo">
+							<select class="span2" id="id_costo" name="id_costo">
 								<option value="">Seleccione:</option>
 								{% for key, costoCategoria in costosCategoria %}
 								<option value="{{ key }}"{{ registro.id_costo == key ? ' selected' : '' }}>{{ costoCategoria.nombre }} - {{ costoCategoria.costo }}</option>
@@ -217,10 +217,10 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</div>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="forma_pago">Forma de Pago:</label>
 					<div class="controls">
-						<select class="span2" id="forma_pagos" name="forma_pago">
+						<select class="span2" id="forma_pago" name="forma_pago">
 							<option value="">Seleccione:</option>
 							{% for formaPago in formasPago %}
 							<option value="{{ formaPago.fpn_clave }}"{{ registro.forma_pago == formaPago.fpn_clave ? ' selected' : '' }}>{{ formaPago.fpn_nombre }}</option>

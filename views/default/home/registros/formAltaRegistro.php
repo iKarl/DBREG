@@ -190,21 +190,21 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="id_costo">Costo:</label>
 					<div class="controls">
 						<div class="input-append">
-							<select class="span2" id="id_costos" name="id_costo">
-								<option value="5">Seleccione:</option>
+							<select class="span2" id="id_costo" name="id_costo">
+								<option value="">Seleccione:</option>
 							</select>
 						</div>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="forma_pago">Forma de Pago:</label>
 					<div class="controls">
-						<select class="span2" id="forma_pagos" name="forma_pago">
-							<option value="EF">Seleccione:</option>
+						<select class="span2" id="forma_pago" name="forma_pago">
+							<option value="">Seleccione:</option>
 							{% for formaPago in formasPago %}
 							<option value="{{ formaPago.fpn_clave }}">{{ formaPago.fpn_nombre }}</option>
 							{% else %}
@@ -216,8 +216,8 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 				<div class="control-group">
 					<label class="control-label" for="status">Status:</label>
 					<div class="controls">
-						<select class="span2" id="statuss" name="status">
-							<option value="COR">Seleccione:</option>
+						<select class="span2" id="status" name="status">
+							<option value="">Seleccione:</option>
 							{% for statusReg in statusRegs %}
 							<option value="{{ statusReg.esr_clave }}"{{ statusReg.esr_clave == "PAG" ? ' selected' : '' }}>{{ statusReg.esr_nombre }}</option>
 							{% else %}
@@ -226,7 +226,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="folio_pago">Folio de control:</label>
 					<div class="controls">
 						<input class="span2" id="folio_pago" name="folio_pago" type="text" value="{{ registro.folio_pago }}" />
