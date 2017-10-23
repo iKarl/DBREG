@@ -46,7 +46,7 @@ class Index_Controller extends Controller
 		// obtenemos la lista de eventos
 		$eventos = $this->model->getEventos();
 
-		$evento = $this->model->evt->getEvento(3);
+		$evento = $this->model->evt->getEvento(2);
 
 		$series = $this->model->rpt->concentrado($evento->evt_clave, $evento->evt_idioma);
 		$acompanantes = $this->model->rpt->getAcompanantes($evento->evt_clave, $evento->evt_idioma);
