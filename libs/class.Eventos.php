@@ -1379,7 +1379,7 @@ class Eventos extends Model
 		";
 
 		$qry = sprintf($qry, $clave);
-echo $qry;
+
 		if ($this->db->hQuery($qry))
 		{
 			if ($this->db->hNumRows() >= 1)
