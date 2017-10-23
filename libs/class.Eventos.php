@@ -1535,13 +1535,13 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		$pdf->SetFont('helvetica', 'B', 23);
-		$pdf->writeHTMLCell('110', '', $x='5', $y='15', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='5', $y='15', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 16);
-		$pdf->writeHTMLCell('110', '', $x='5', $y='25', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='5', $y='25', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 8);
-		$pdf->writeHTMLCell('110', '', $x='5', $y='20', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='5', $y='20', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
