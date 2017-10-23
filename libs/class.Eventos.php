@@ -1541,7 +1541,7 @@ class Eventos extends Model
 		$pdf->writeHTMLCell('', '', $x='5', $y='25', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', 'B', 6);
-		$pdf->writeHTMLCell('', '', $x='5', $y='20', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='5', $y='27', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
 		$pdf->SetFont('helvetica', '', 20);
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
