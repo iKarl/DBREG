@@ -179,7 +179,7 @@ class Index_Model extends Model
 
 			"EF",
 			date("Y-m-d H:s:i"),
-			"PEN" // $reg->status
+			"REG" // $reg->status
 		);
 
 		if ($this->db->hQuery($qry))

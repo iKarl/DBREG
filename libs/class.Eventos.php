@@ -2047,7 +2047,7 @@ class Eventos extends Model
 		// set font
 		$pdf->SetFont('helvetica', 'B', 29);
 		//$pdf->Ln(25, true);
-		$pdf->writeHTMLCell('', '', $x='', $y='90', $nombres, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('', '', $x='', $y='90', $func->mayusStr($nombres), $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('', '', $x='', $y='120', $apellidos, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 
 		/*if (isset($post->total_horas) AND $post->total_horas >= 6)
