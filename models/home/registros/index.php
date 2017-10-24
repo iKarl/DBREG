@@ -836,7 +836,7 @@ class Index_Model extends Model
 			$idUsuario,
 			$acom['acm_status']
 		);
-
+echo $qry;
 		if ($this->db->hQuery($qry))
 		{
 			if ($this->db->hAffectedRows() == 1)
