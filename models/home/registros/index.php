@@ -888,7 +888,7 @@ class Index_Model extends Model
 			$acom['acm_status'],
 			$acom['id_acompanante']
 		);
-echo $qry;
+
 		if ($this->db->hQuery($qry))
 		{
 			if ($this->db->hAffectedRows() == 1)
@@ -971,7 +971,7 @@ echo $qry;
 		$idAcompanante = $this->db->hEscapeString($idAcompanante);
 		$tabla = $this->db->hEscapeString($tabla);
 
-		$qry = "SELECT id_acompanante, acm_idRegistro, acm_idInterno, acm_clave, acm_genero, acm_titulo, 
+		$qry = "SELECT id_acm AS id_acompanante, acm_idRegistro, acm_idInterno, acm_clave, acm_genero, acm_titulo, 
 			acm_nombre, acm_app, acm_apm, acm_id_costo, acm_comentarios, acm_status, acm_impresion_gafete, 
 			acm_fecha_impresion_gafete, acm_impresion_total_gafete 
 			FROM smc_reg_%s_acom 
