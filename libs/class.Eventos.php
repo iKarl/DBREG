@@ -1534,7 +1534,30 @@ class Eventos extends Model
 		//$border = array('LTRB' => array('width' => 5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(28, 334, 34)));
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
-		$pdf->SetFont('helvetica', '', 21);
+		if ($registro->cat_registro == "ACOMP") {
+			$pdf->writeHTMLCell('0', '', $x='', $y='91', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+			//$pdf->writeHTMLCell('0', '', $x='95', $y='43', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+			// Apellido
+			$pdf->SetFont('helvetica', '', 19);
+			$pdf->writeHTMLCell('0', '', $x='0', $y='102', $apellidos, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+		} else {
+			$pdf->SetFont('helvetica', '', 21);
+			$pdf->writeHTMLCell('', '', $x='', $y='6', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			//$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', '', 19);
+			$pdf->writeHTMLCell('', '', $x='', $y='20', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			//$pdf->writeHTMLCell('90', '', $x='115', $y='62', $empresa, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			$pdf->SetFont('helvetica', '', 6);
+			$pdf->writeHTMLCell('35', '', $x='65', $y='41', $registro->cat_registro, $border=0, $ln=0, $fill=0, $reseth=true, $align='L', $autopadding=false);
+
+			$pdf->SetFont('helvetica', '', 20);
+			//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+			//$pdf->writeHTMLCell('', '', $x='', $y='60', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
+
+			$pdf->SetFont('helvetica', '', 12);
+		}
+
+		/*$pdf->SetFont('helvetica', '', 21);
 		$pdf->writeHTMLCell('', '', $x='', $y='6', $nombre, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='115', $y='43', $nombreApp, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		$pdf->SetFont('helvetica', '', 19);
@@ -1547,7 +1570,7 @@ class Eventos extends Model
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('', '', $x='', $y='60', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
-		$pdf->SetFont('helvetica', '', 12);
+		$pdf->SetFont('helvetica', '', 12);*/
 		//$pdf->writeHTMLCell('100', '', $x='-15', $y='90', $apellidos, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('90', '', $x='2', $y='90', $ciudad, $border=0, $ln=0, $fill=0, $reseth=true, $align='C', $autopadding=false);
 
@@ -1586,10 +1609,11 @@ class Eventos extends Model
 			'stretchtext' => 5
 		);
 
+		if ($registro->cat_registro != "ACOMP") {
 		// Codigo de barra
 		$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='35', $y='40', '', 14, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($registro->id_registro), 'C128A', $x='90', $y='180', '', 16, 0.4, $style, 'N');
-
+		}
 		// ---------------------------------------------------------
 
 		// Close and output PDF document
