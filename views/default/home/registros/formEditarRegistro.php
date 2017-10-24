@@ -105,7 +105,7 @@ if (!defined("SimpleMVC")) { die("Not Access Direct"); }
 						</select>
 					</div>
 				</div>
-				<div class="control-group" style="display: none;">
+				<div class="control-group">
 					<label class="control-label" for="titulo">Titulo:</label>
 					<div class="controls">
 						<select class="span2" id="titulo" name="titulo">
