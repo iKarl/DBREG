@@ -2310,7 +2310,7 @@ class Eventos extends Model
 		$nombre = $func->mayusStr($acompanante->acm_nombre);
 		$apellido = $func->mayusStr($acompanante->acm_app . " " . $acompanante->acm_apm);
 
-		$pdf->writeHTMLCell('0', '', $x='', $y='94', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
+		$pdf->writeHTMLCell('0', '', $x='', $y='91', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('0', '', $x='95', $y='43', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		// Apellido
 		$pdf->SetFont('helvetica', '', 19);
