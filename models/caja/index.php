@@ -192,6 +192,7 @@ class Index_Model extends Model
 	{
 		$qry = "INSERT INTO smc_reg_%s_acom SET 
 			acm_idRegistro = %d,
+			id_registro = %d,
 			acm_clave = '%s',
 			acm_genero = '%s',
 			acm_titulo = '%s',
@@ -207,6 +208,7 @@ class Index_Model extends Model
 
 		$qry = sprintf($qry,
 			$acom['tabla'],
+			$acom['acm_idRegistro'],
 			$acom['acm_idRegistro'],
 			$acom['acm_clave'],
 			$acom['acm_genero'],
