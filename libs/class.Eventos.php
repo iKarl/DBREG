@@ -1535,6 +1535,7 @@ class Eventos extends Model
 		//$pdf->Image($img_file, 0, 0, 235, 235, '', '', '', false, 300, '', false, 0, 0, 0);
 
 		if ($registro->cat_registro == "ACOMP") {
+			$pdf->SetFont('helvetica', '', 21);
 			$pdf->writeHTMLCell('0', '', $x='', $y='91', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 			//$pdf->writeHTMLCell('0', '', $x='95', $y='43', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 			// Apellido
