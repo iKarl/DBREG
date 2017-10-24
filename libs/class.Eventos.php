@@ -2302,7 +2302,7 @@ class Eventos extends Model
 		// ---------------------------------------------------------
 
 		// set font
-		$pdf->SetFont('helvetica', 'B', 26);
+		$pdf->SetFont('helvetica', '', 21);
 
 		// Add a page
 		// This method has several options, check the source code documentation for more information.
@@ -2313,7 +2313,7 @@ class Eventos extends Model
 		$pdf->writeHTMLCell('0', '', $x='', $y='94', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		//$pdf->writeHTMLCell('0', '', $x='95', $y='43', $nombre, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 		// Apellido
-		//$pdf->SetFont('helvetica', 'B', 26);
+		$pdf->SetFont('helvetica', '', 19);
 		$pdf->writeHTMLCell('0', '', $x='0', $y='102', $apellido, $border=0, $ln=1, $fill=0, $reseth=false, $align='C', $autopadding=false);
 
 		// Categoria
@@ -2339,7 +2339,7 @@ class Eventos extends Model
 		);
 
 		// Codigo de barra
-		$pdf->write1DBarcode($acompanante->id_acompanante, 'C128A', 0, 110, '', 16, 0.4, $style, 'N');
+		//$pdf->write1DBarcode($acompanante->id_acompanante, 'C128A', 0, 110, '', 16, 0.4, $style, 'N');
 		//$pdf->write1DBarcode($func->nombreImagenBarcode($acompanante->id_acompanante), 'C128A', 110, 113, '', 16, 0.4, $style, 'N');
 
 		// ---------------------------------------------------------
