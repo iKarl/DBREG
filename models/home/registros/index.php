@@ -868,7 +868,7 @@ class Index_Model extends Model
 			acm_fechaModificacion = '%s',
 			acm_usuarioModifico = %d,
 			acm_status = '%s' 
-			WHERE id_acompanante = %d 
+			WHERE id_acm = %d 
 			LIMIT 1
 		";
 
@@ -888,7 +888,7 @@ class Index_Model extends Model
 			$acom['acm_status'],
 			$acom['id_acompanante']
 		);
-echo $qry;
+
 		if ($this->db->hQuery($qry))
 		{
 			if ($this->db->hAffectedRows() == 1)
