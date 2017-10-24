@@ -84,6 +84,23 @@ class Index_Controller extends Controller
 		header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
 		$request_body = file_get_contents('php://input');
 		$data = json_decode($request_body);
+		$data->costo = "0";
+
+		if ($data->categoria == "FEMECOT") {
+			$data->costo = "6000";
+		} else if ($data->categoria == "RESIDENTE") {
+			$data->costo = "3000";
+		} else if ($data->categoria == "ENFERMERIA") {
+			$data->costo = "3000";
+		} else if ($data->categoria == "CMO") {
+			$data->costo = "6000";
+		} else if ($data->categoria == "GENERAL") {
+			$data->costo = "6000";
+		} else if ($data->categoria == "ACOMP") {
+			$data->costo = "2000";
+		} else if ($data->categoria == "ACOMMENOR") {
+			$data->costo = "1000";
+		}
 
 		if (($id = $this->model->set($data)) !== false) {
 			//$this->base64_to_jpg($data->photo, "./views/images/fotos/foto_" . $id . ".jpg");
