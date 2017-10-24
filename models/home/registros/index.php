@@ -809,7 +809,6 @@ class Index_Model extends Model
 	{
 		$qry = "INSERT INTO smc_reg_%s_acom SET 
 			acm_idRegistro = %d,
-			id_registro = %d,
 			acm_clave = '%s',
 			acm_genero = '%s',
 			acm_titulo = '%s',
@@ -825,7 +824,6 @@ class Index_Model extends Model
 
 		$qry = sprintf($qry,
 			$acom['tabla'],
-			$acom['acm_idRegistro'],
 			$acom['acm_idRegistro'],
 			$acom['acm_clave'],
 			$acom['acm_genero'],
@@ -868,7 +866,7 @@ class Index_Model extends Model
 			acm_fechaModificacion = '%s',
 			acm_usuarioModifico = %d,
 			acm_status = '%s' 
-			WHERE id_acm = %d 
+			WHERE id_acompanante = %d 
 			LIMIT 1
 		";
 
@@ -971,7 +969,7 @@ class Index_Model extends Model
 		$idAcompanante = $this->db->hEscapeString($idAcompanante);
 		$tabla = $this->db->hEscapeString($tabla);
 
-		$qry = "SELECT id_acm AS id_acompanante, acm_idRegistro, acm_idInterno, acm_clave, acm_genero, acm_titulo, 
+		$qry = "SELECT id_acompanante, acm_idRegistro, acm_idInterno, acm_clave, acm_genero, acm_titulo, 
 			acm_nombre, acm_app, acm_apm, acm_id_costo, acm_comentarios, acm_status, acm_impresion_gafete, 
 			acm_fecha_impresion_gafete, acm_impresion_total_gafete 
 			FROM smc_reg_%s_acom 
