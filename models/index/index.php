@@ -15,7 +15,7 @@ class Index_Model extends Model
 	public function searchPaterno($name) {
 		$registers = array();
 
-		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete 
+		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete, rfc 
 			FROM smc_reg_CIPE14 
 			WHERE app LIKE '%" . $name . "%' 
 			ORDER BY app, apm, nombre ASC
@@ -35,7 +35,7 @@ class Index_Model extends Model
 	public function searchNombre($name) {
 		$registers = array();
 		
-		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete 
+		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete, rfc
 			FROM smc_reg_CIPE14 
 			WHERE nombre LIKE '%" . $name . "%' 
 			ORDER BY app, apm, nombre ASC
@@ -55,7 +55,7 @@ class Index_Model extends Model
 	public function searchEmpresa($name) {
 		$registers = array();
 		
-		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete 
+		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete, rfc 
 			FROM smc_reg_CIPE14 
 			WHERE emp_o_ins LIKE '%" . $name . "%' 
 			ORDER BY app, apm, nombre ASC
@@ -75,7 +75,7 @@ class Index_Model extends Model
 	public function searchAmbos($paterno, $nombre) {
 		$registers = array();
 		
-		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete 
+		$qry = "SELECT id_registro, titulo, nombre, app, apm, emp_o_ins, status, impresion_gafete, rfc 
 			FROM smc_reg_CIPE14 
 			WHERE app LIKE '%" . $paterno . "%' 
 			AND nombre LIKE '%" . $nombre . "%' 
@@ -244,6 +244,24 @@ class Index_Model extends Model
 				impresion_gafete = 1,
 				fecha_impresion_gafete = "' . $now . '",
 				impresion_total_gafete = impresion_total_gafete + 1
+				WHERE id_registro = ' . $registerId . ' LIMIT 1';
+
+			if ($this->db->hQuery($qry)) {
+				if ($this->db->hAffectedRows() == 1) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	public function cena($registerId) {
+		if (!empty($registerId)) {
+			$now = date("Y-m-d H:i:s");
+
+			$qry = 'UPDATE smc_reg_CIPE14 SET 
+				adscripcion = 1
 				WHERE id_registro = ' . $registerId . ' LIMIT 1';
 
 			if ($this->db->hQuery($qry)) {

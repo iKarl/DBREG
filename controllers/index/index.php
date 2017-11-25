@@ -139,6 +139,23 @@ class Index_Controller extends Controller
 		}
 	}
 
+	public function cena($request) {
+		$this->json =  array(
+			"status" => false
+		);
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Credentials: true ");
+		header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
+		header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
+		$request_body = file_get_contents('php://input');
+		$data = json_decode($request_body);
+
+		if ($this->model->cena($data->id)) {
+			$this->json["status"] = true;
+			echo json_encode($this->json);
+		}
+	}
+
 	public function printing($request) {
 		$this->json =  array(
 			"status" => false
